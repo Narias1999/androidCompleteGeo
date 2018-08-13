@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.support.annotation.NonNull;
 import android.support.v7.widget.CardView;
 import android.support.v7.widget.RecyclerView;
+import android.text.Layout;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -26,9 +27,11 @@ public class RVPlaces extends RecyclerView.Adapter<RVPlaces.ViewHolder> {
 
     @NonNull
     @Override
-    public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+        public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+        int layoutId = ListBayCat.twoCards ? R.layout.list1 : R.layout.list;
+        System.out.println(ListBayCat.twoCards);
         View holder = LayoutInflater.from(parent.getContext())
-                .inflate(R.layout.list, parent, false);
+                .inflate(layoutId, parent, false);
         ViewHolder vh = new ViewHolder(holder);
         return vh;
     }
@@ -37,7 +40,9 @@ public class RVPlaces extends RecyclerView.Adapter<RVPlaces.ViewHolder> {
     public void onBindViewHolder(@NonNull final ViewHolder holder, final int position) {
         final String imageURL = "http://192.168.1.9/RecursosTuristicos/ANDROID_STUDIO/img/"+Places.get(position).getImagen();
         Picasso.get().load(imageURL).into(holder.imv);
-        holder.tv.setText(Places.get(position).getNombre());
+        if(!(holder.tv == null)) {
+            holder.tv.setText(Places.get(position).getNombre());
+        }
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

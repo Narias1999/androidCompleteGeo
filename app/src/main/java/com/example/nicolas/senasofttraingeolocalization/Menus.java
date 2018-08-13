@@ -84,7 +84,7 @@ public class Menus extends AppCompatActivity
     @Override
     public boolean onNavigationItemSelected(MenuItem item) {
         // Handle navigation view item clicks here.
-        int id = item.getItemId();
+        /*int id = item.getItemId();
         NavigationView nv = findViewById(R.id.nav_view);
         RecyclerView rv = findViewById(R.id.myRecycler);
 
@@ -106,19 +106,13 @@ public class Menus extends AppCompatActivity
             nv.getMenu().getItem(2).setChecked(true);
             RVPlaces adapter = new RVPlaces(filter(ListBayCat.data, "3"));
             rv.setAdapter(adapter);
+        } else if (id == R.id.nav_home) {
+            setTitle("Inicio");
+
         }
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);
+        return true;*/
         return true;
-    }
-
-    static public List<MyModel> filter(List<MyModel> listWithoutFilter, String cat) {
-        List<MyModel> filteredList = new ArrayList<MyModel>();
-        for (int i = 0; i < listWithoutFilter.size(); i++) {
-            if(cat.equals(listWithoutFilter.get(i).getCat())) {
-                filteredList.add(listWithoutFilter.get(i));
-            }
-        }
-        return filteredList;
     }
 }

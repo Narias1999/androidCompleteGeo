@@ -5,6 +5,19 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".ListBayCat">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:id="@+id/view_inicio">
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_gravity="center"
+            android:layout_marginTop="30dp"
+            android:textSize="90dp"
+            android:text="ESTAMOS EN EL HIJUEPUTA INICIO"
+            android:layout_height="match_parent" />
+    </LinearLayout>
     <android.support.v7.widget.RecyclerView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
